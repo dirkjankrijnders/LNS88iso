@@ -9,6 +9,8 @@
 // Item Number (Art.-Nr.): 50010
 #define ARTNR 5001
 
+void HandleS88(S88_t* S88);
+void dumpPacket(UhlenbrockMsg & ub); 
 //uint16_t moduleAddr;
 //uint16_t lncv[LNCV_COUNT];
 
@@ -17,16 +19,16 @@ lnMsg *LnPacket;
 LocoNetCVClass lnCV;
 uint8_t* lncv;
 
-boolean programmingMode;
+int programmingMode;
 
 S88_t S88;
 
-LNCV_LNS88_t lnconfig EEMEM = {
+LNCV_LNS88_t lnconfig = {
   #include "LNCV_data.h"
 };
 
-void setup() {
-  // put your setup code here, to run once: 
+int main(){
+	  // put your setup code here, to run once: 
   SetupS88Hardware();
   uint16_t clk = 20;
   SetClock(&S88, &clk, false);
@@ -36,11 +38,9 @@ void setup() {
   //StartS88Read(&S88, FULL);
   //while (!//Serial)
   //Serial.begin(57600);
-  
-  // put your main code here, to run repeatedly:
-}
 
-void loop(){
+  while(1) {
+  // put your main code here, to run repeatedly:
   if (IsReady(&S88)) {
     ////Serial.println("Ready");
     HandleS88(&S88);
@@ -58,6 +58,8 @@ void loop(){
     }
   }
 
+}
+return 0;
 }
 
 void HandleS88(S88_t* S88) {
