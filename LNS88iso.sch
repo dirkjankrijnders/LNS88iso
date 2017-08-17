@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:LNS88iso-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,7 +30,6 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:pyth
-LIBS:LNS88iso-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -91,7 +91,7 @@ $EndComp
 Text GLabel 6200 3500 0    60   Input ~ 0
 Raildata
 $Comp
-L AP1117E50 U102
+L AP111750 U102
 U 1 1 55D493A5
 P 6600 1900
 F 0 "U102" H 6700 1650 50  0000 C CNN
@@ -424,7 +424,7 @@ F 3 "" H 4700 2150 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L JUMPER JP102
+L Jumper JP102
 U 1 1 55DDCCFF
 P 4750 5100
 F 0 "JP102" H 4750 5250 50  0000 C CNN
@@ -457,7 +457,7 @@ F 3 "" H 5250 2050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L JUMPER JP101
+L Jumper JP101
 U 1 1 55DDCF6E
 P 3850 2100
 F 0 "JP101" H 3850 2250 50  0000 C CNN
@@ -490,7 +490,7 @@ F 3 "" H 3500 2050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L AP1117E50 U103
+L AP111750 U103
 U 1 1 55DDD1FF
 P 3300 1050
 F 0 "U103" H 3400 800 50  0000 C CNN
@@ -730,7 +730,7 @@ Wire Wire Line
 Wire Wire Line
 	4350 5100 4350 5000
 Wire Wire Line
-	3700 4600 3700 4450
+	3700 4450 3700 4600
 Wire Wire Line
 	3700 5000 3700 4900
 Wire Wire Line
@@ -760,10 +760,6 @@ Wire Wire Line
 	5250 2200 5200 2200
 Wire Wire Line
 	3500 2050 3500 2100
-Wire Wire Line
-	3500 2100 3550 2100
-Wire Wire Line
-	4150 2100 4250 2100
 Wire Wire Line
 	4250 2200 4200 2200
 Wire Wire Line
@@ -888,7 +884,7 @@ Wire Wire Line
 Connection ~ 7700 1900
 Connection ~ 7700 2350
 $Comp
-L F_Small F102
+L Fuse_Small F102
 U 1 1 55E86294
 P 7900 2700
 F 0 "F102" H 7860 2760 50  0000 L CNN
@@ -899,20 +895,18 @@ F 3 "" H 7900 2700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L F_Small F101
+L Fuse_Small F101
 U 1 1 55E86312
-P 2250 1050
-F 0 "F101" H 2210 1110 50  0000 L CNN
-F 1 "F_Small" H 2130 990 50  0000 L CNN
-F 2 "Fuse_Holders_and_Fuses:Fuse_SMD1206_HandSoldering" H 2250 1050 60  0001 C CNN
-F 3 "" H 2250 1050 60  0000 C CNN
-	1    2250 1050
+P 2400 1050
+F 0 "F101" H 2360 1110 50  0000 L CNN
+F 1 "F_Small" H 2280 990 50  0000 L CNN
+F 2 "Fuse_Holders_and_Fuses:Fuse_SMD1206_HandSoldering" H 2400 1050 60  0001 C CNN
+F 3 "" H 2400 1050 60  0000 C CNN
+	1    2400 1050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2350 1050 3000 1050
-Wire Wire Line
-	2150 1050 2000 1050
+	2500 1050 3000 1050
 Wire Wire Line
 	7800 2700 7700 2700
 Wire Wire Line
@@ -994,4 +988,10 @@ Wire Wire Line
 	3350 3400 3050 3400
 Wire Wire Line
 	3350 3500 3050 3500
+Wire Wire Line
+	4250 2100 4150 2100
+Wire Wire Line
+	3500 2100 3550 2100
+Wire Wire Line
+	2300 1050 2000 1050
 $EndSCHEMATC
