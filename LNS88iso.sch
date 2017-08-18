@@ -994,4 +994,12 @@ Wire Wire Line
 	3500 2100 3550 2100
 Wire Wire Line
 	2300 1050 2000 1050
+Text Label 3100 3100 0    60   ~ 0
+DATA
+Text Label 3100 2800 0    60   ~ 0
+CLK
+Text Label 3100 2900 0    60   ~ 0
+LOAD
+Text Label 3100 3000 0    60   ~ 0
+RESET
 $EndSCHEMATC
