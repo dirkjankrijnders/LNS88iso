@@ -7,7 +7,7 @@
 #define LNCV_COUNT 10
 
 // Item Number (Art.-Nr.): 50010
-#define ARTNR 5001
+#define ARTNR 10003
 
 void HandleS88(S88_t* S88);
 void dumpPacket(UhlenbrockMsg & ub); 
@@ -239,3 +239,10 @@ void notifyLNCVprogrammingStop(uint16_t ArtNr, uint16_t ModuleAddress) {
 	}
 }
 
+
+int8_t notifyLNCVdiscover( uint16_t & ArtNr, uint16_t & ModuleAddress ) {
+  uint16_t MyModuleAddress = lnconfig.addr;
+  ModuleAddress = MyModuleAddress;
+  ArtNr = ARTNR;
+  return LNCV_LACK_OK;
+}
